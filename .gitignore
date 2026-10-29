@@ -1,6 +1,7 @@
 node_modules/
 dist/
 release/
+web-ext-artifacts/
 .DS_Store
 *.log
 oauth-clients.local.json

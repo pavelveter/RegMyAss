@@ -1,6 +1,6 @@
 # RegMyAss ⚡
 
-> A Chrome Manifest V3 extension that helps register accounts using temporary or personal email, detects registration forms, generates account details, handles email verification, and stores credentials.
+> A Manifest V3 extension for Chrome and Firefox that helps register accounts using temporary or personal email, detects registration forms, generates account details, handles email verification, and stores credentials.
 
 <img width="376" height="278" alt="image" src="https://github.com/user-attachments/assets/861b8cdb-bc18-4351-b448-4ff320c08d39" />
 
@@ -24,6 +24,8 @@ npm run build
 ```
 
 In Chrome, open `chrome://extensions`, enable **Developer mode**, select **Load unpacked**, and choose the generated `dist` folder. Built files are excluded from Git.
+
+In Firefox, open `about:debugging#/runtime/this-firefox`, click **Load Temporary Add-on…**, and select `dist/manifest.json` (or the built `.xpi`).
 
 ## Русский
 

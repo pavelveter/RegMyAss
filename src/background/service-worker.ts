@@ -3,6 +3,7 @@
  * Manifest V3 entry point handling lifecycle, messaging, and automation orchestration.
  */
 
+import '../shared/browser';
 import { WorkflowManager } from './workflow-manager';
 import { ProviderManager } from '../email/provider-manager';
 import { VerificationManager } from '../email/verification-manager';
@@ -46,7 +47,9 @@ async function getTargetTab(preferredTabId?: number): Promise<chrome.tabs.Tab | 
     }
   }
 
-  const normalWindow = await chrome.windows.getLastFocused({ windowTypes: ['normal'] }).catch(() => null);
+  const allWindows = await chrome.windows.getAll().catch(() => []);
+  const normalWindows = allWindows.filter((window) => window.type === 'normal');
+  const normalWindow = normalWindows.find((window) => window.focused) || normalWindows[0];
   if (!normalWindow?.id) return undefined;
   const [tab] = await chrome.tabs.query({ active: true, windowId: normalWindow.id });
   return tab;

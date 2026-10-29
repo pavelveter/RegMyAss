@@ -3,6 +3,7 @@
  * Injected into target websites to scan, fill forms, and detect CAPTCHA challenges.
  */
 
+import '../shared/browser';
 import { FormDetector } from './form-detector';
 import { FormFiller } from './form-filler';
 import { LoginDetector } from './login-detector';
